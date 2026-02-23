@@ -25,3 +25,5 @@ Start the Server: node server.js
 
 Run the Test: In a separate terminal navigate to personalized_feed and run node test_feed.js 
 ```
+
+<img width="1920" height="1080" alt="PF - Sequence Diagram" src="https://github.com/user-attachments/assets/fccce3bc-6bc3-476a-8a66-6a2f955ff8ca" />
