@@ -22,7 +22,7 @@ HOW TO PROGRAMMATICALLY REQUEST AND RECEIVE DATA FROM CREATEACCOUNT MICROSERVICE
 
   Code for example test function and call:
 
-![Alt text](../images/testCreateAccount.png)
+![Alt text](../images/testCreateAccount.PNG)
 
 To Test:
     -Create a file in the project root directory (cd ~/microservice/project) called: testCreateAccount.js
@@ -40,7 +40,7 @@ HOW TO PROGRAMMATICALLY REQUEST AND RECEIVE DATA FROM LOGIN MICROSERVICE:
 
    Example test function and call:
 
-![Alt text](../images/testLogin.png)
+![Alt text](../images/testLogin.PNG)
 
 To Test:
     -Create a file in the project root directory (cd ~/microservice/project) called: testLogin.js
