@@ -1,6 +1,7 @@
 const express = require('express');
 const fs = require('fs');
 const app = express();
+const service = require('./recommendation_service');
 app.use(express.json());
 
 const PORT = 3005;
@@ -10,25 +11,12 @@ const readData = (file) => JSON.parse(fs.readFileSync(file, 'utf8'));
 
 // Return item recommendations for a given user
 app.get('/recommendations/:userId', (req, res) => {
-    const userId = parseInt(req.params.userId);
-    
     try {
-        const users = readData('users.json');
-        const items = readData('items.json');
-
-        const user = users.find(u => u.userId === userId);
-
-        if (!user) {
-            return res.status(404).json({ error: "User not found" });
-        }
-        
-        // Match items based on shared interest tags
-        const matches = items.filter(item => 
-            item.tags.some(tag => user.interest_tags.includes(tag))
-        );
-        res.json(matches);
+        const results = service.getRecommendations(parseInt(req.params.userId));
+        res.json(results);
     } catch (err) {
-        res.status(500).json({ error: "Error reading data files"});
+        const status = err.message === 'NOT_FOUND' ? 404 : 500;
+        res.status(status).json({ error: err.message });
     }
 });
 
